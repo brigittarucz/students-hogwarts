@@ -1,0 +1,122 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 1991 Hogwarts Students </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <div class="container-headers">
+    </div>
+
+    <audio class="audioShutdown" controls>
+        <source src="sounds/shutdown.mp3" type="audio/mp3">
+    </audio>
+
+    <audio class="audioError" controls>
+        <source src="sounds/error.mp3" type="audio/mp3">
+    </audio>
+
+    <audio class="audioDarude" controls loop>
+        <source src="sounds/darude.mp3" type="audio/mp3">
+    </audio>
+
+    <h2 class="do-not-delete"> Not happening </h2>
+    <div id="modal-element" class="modal">
+        <div class="modal-content">
+            <span class="close"> &times; </span>
+            <img src="graphics/slytherin.jpg" alt="Student Crest" class="modal-crest">
+            <article class="modal-student">
+                <div class="student-details">
+                    <img src="students/abbott_h.png" alt="Student Image" class="stud-img-modal">
+                    <p class="full-name"> Ann Sophie Jackson</p>
+                    <p class="modal-house"> Slytherin </p>
+                    <p class="modal-blood"> Muggle Born </p>
+                    <p class="modal-status"> Not Prefect </p>
+                    <p class="modal-expelled"> Not Expelled </p>
+                    <p class="modal-member"> Not a Member of Inquisitorial Squad </p>
+                </div>
+            </article>
+            <img src="graphics/spell2.gif" alt="Spell" class="modal-spell">
+        </div>
+    </div>
+
+    <div id="content">
+        <main>
+            <h1> 1991 Student List </h1>
+
+            <section class="students">
+                <table id="list">
+                    <thead>
+                        <tr>
+                            <th data-sort="stud-image"> Image </th>
+                            <th data-sort="stud-first"> First Name </th>
+                            <th data-sort="stud-middle"> Middle Name </th>
+                            <th data-sort="stud-last"> Last Name </th>
+                            <th data-sort="stud-house"> House </th>
+                            <th data-sort="stud-gender"> Gender </th>
+                            <th data-sort="stud-presence"> Expell Student </th>
+                            <th data-sort="stud-status"> Status </th>
+                            <th data-sort="stud-member"> Inquisitorial Squad </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+
+        <aside>
+            <p> Sort by: </p>
+            <button class="button-first-name"> First Name </button>
+            <button class="button-last-name"> Last Name </button>
+            <p> Filter by house: </p>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" value="Gryffindor" class="Gryffindor-checkbox" checked> Gryffindor
+                <span class="students-number-Gryffindor"> (21) </span>
+                <input type="checkbox" value="Hufflepuff" class="Hufflepuff-checkbox" checked> Hufflepuff
+                <span class="students-number-Hufflepuff"> (21) </span> <br>
+                <input type="checkbox" value="Ravenclaw" class="Ravenclaw-checkbox" checked> Ravenclaw
+                <span class="students-number-Ravenclaw"> (21) </span>
+                <input type="checkbox" value="Slytherin" class="Slytherin-checkbox" checked> Slytherin
+                <span class="students-number-Slytherin"> (21) </span>
+            </div>
+            <p> Number of students: <span class="students-number"> 44 </span> </p>
+            <p> Expelled: <span class="students-number-expelled"> 2 </span> </p>
+            <button class="students-number-current"> View Current </button>
+            <button class="students-number-expell"> View Expelled </button>
+        </aside>
+        </main>
+    </div>
+
+    <div id="overlay-graphics">
+        <img src="graphics/castle.png" alt="Magic Book">
+    </div>
+
+    <template id="student-template">
+        <tr class="student-row">
+            <td data-field="image-name"> <img src="students/abbott_h.png"> </td>
+            <td data-field="first-name"> FIRST NAME</td>
+            <td data-field="middle-name"> MIDDLE NAME</td>
+            <td data-field="last-name"> LAST NAME </td>
+            <td data-field="house-name"> HOUSE</td>
+            <td data-field="gender"> GENDER</td>
+            <td class="button"> <button data-action="remove" data-id="uuid"> Expell </button> </td>
+            <td class="button"> <button data-action="make-prefect" data-status="not-prefect"> Make prefect </button>
+            <td class="button button-membership"> <button data-action="make-member" data-status="not-member"> Make
+                    member </button> </td>
+            </td>
+        </tr>
+    </template>
+
+    <script src="listFunctionality.js">
+    </script>
+</body>
+
+</html>

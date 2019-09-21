@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css?family=Vollkorn&display=swap');
+
+@font-face {
+	font-family: 'Magic School One';
+	src: url("fonts/MagicSchoolOne.ttf");
+}
+
+/* LAYOUT */
+
+body {
+	font-family: 'Vollkorn', serif;
+	background-image: url('graphics/bg-image.png');
+	background-size: cover;
+	overflow-y: hidden;
+	color: #cfebdf;
+	text-transform: capitalize;
+}
+
+#content {
+	width: 90%;
+	background-color: rgba(0, 0, 0, 0.8);
+	margin: 5% auto;
+	height: 70%;
+	overflow: scroll;
+	overflow-x: hidden;
+	padding: 50px;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+	grid-gap: 30px;
+	position: relative;
+}
+
+main {
+	grid-column: 1/span 1;
+}
+
+aside {
+	grid-column: 2/span 1;
+	background-image: url('graphics/paper-scroll.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding: 20px;
+}
+
+#content::-webkit-scrollbar {
+	width: 8px;
+}
+
+#content::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
+}
+
+#content::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 5px;
+}
+
+#overlay-graphics {
+	position: absolute;
+	bottom: -20px;
+	left: -180px;
+	filter: drop-shadow(5px 5px 20px rgba(0, 0, 0, 0.5));
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+	font-family: 'Magic School One';
+	font-size: 64px;
+	text-align: center;
+}
+
+aside p {
+	font-family: 'Magic School One';
+	color: black;
+	line-height: 0px;
+	padding: 10px 20px;
+	font-size: 30px;
+}
+
+aside button {
+	margin-left: 15px;
+}
+
+.checkbox-wrapper {
+	display: inline-block;
+	color: black;
+}
+
+/* STUDENTS DISPLAY LAYOUT */
+
+th,
+td {
+	background-color: rgba(255, 255, 255, 0.15);
+	padding: 15px;
+	text-align: left;
+}
+
+.students {
+	margin: 0 10%;
+}
+
+td img {
+	width: 50px;
+	filter: grayscale(100);
+}
+
+/* STUDENT MODAL */
+
+.modal {
+	position: fixed;
+	z-index: 3;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.modal-content {
+	width: 800px;
+	margin: 10% auto;
+	height: 450px;
+	background-image: radial-gradient(circle, rgba(12, 92, 79, 1) 0%, rgba(0, 0, 0, 1) 48%);
+	background-size: fill;
+}
+
+.close {
+	font-size: 3rem;
+	margin-right: 2rem;
+	float: right;
+	font-weight: 900;
+	color: white;
+}
+
+.close:hover {
+	cursor: pointer;
+}
+
+/* GRID SYSTEM MODAL */
+
+.modal-content {
+	display: grid;
+	grid-template-columns: 450px 200px 100px 50px;
+	grid-template-rows: 2fr 1fr;
+}
+
+.close {
+	grid-column: 4/span 1;
+	grid-row: 1/span 1;
+}
+
+.modal-crest {
+	grid-column: 1/span 1;
+	grid-row: 1/span 2;
+	object-fit: cover;
+	height: 100%;
+}
+
+.modal-student {
+	grid-column: 2/span 2;
+	grid-row: 1/span 2;
+	font-weight: 900;
+	z-index: 2;
+}
+
+.modal-spell {
+	grid-column: 3/span 2;
+	grid-row: 2/span 1;
+	object-fit: cover;
+	width: 150px;
+}
+
+/* MODAL STYLING DETAILS */
+
+.modal-student {
+	padding: 50px 0;
+	margin-left: -50px;
+	font-size: 16px;
+}
+
+.modal-student .stud-img-modal {
+	border-radius: 100px;
+	filter: grayscale(100);
+	margin-right: 20px;
+}
+
+.container-headers {
+	overflow: hidden;
+}
+
+h2.do-not-delete {
+	font-family: sans-serif;
+	position: absolute;
+	z-index: 50;
+	font-size: 60px;
+	color: red;
+	text-shadow: 2px 2px 0px greenyellow;
+	display: none;
+}
+
+audio {
+	display: none;
+}
+
+@media screen and (max-width: 900px) {
+	#content {
+		overflow-x: scroll;
+		display: grid;
+		grid-template-columns: 1fr;
+		padding: 0px;
+		width: 95%;
+		margin: 2.5% auto;
+		height: 95%;
+	}
+
+	aside {
+		grid-column: 1/span 1;
+		grid-row: 1/span 1;
+		height: 400px;
+		width: 350px;
+		margin-left: calc(50% - 150px);
+	}
+
+	h1 {
+		font-size: 42px;
+		margin-top: 150px;
+		text-align: left;
+		margin-left: calc(50% - 100px);
+	}
+
+	th,
+	td {
+		padding: 5px;
+	}
+
+	.students {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	#overlay-graphics {
+		display: none;
+	}
+
+	aside {
+		background-image: none;
+		margin: 0;
+		margin-left: 20px;
+	}
+
+	aside p {
+		color: #cfebdf;
+	}
+
+	.checkbox-wrapper {
+		color: #cfebdf;
+	}
+
+	h1 {
+		margin-left: 60px;
+	}
+
+	td[data-field="image-name"],
+	th[data-sort="stud-image"] {
+		display: none;
+	}
+
+	td[data-field="middle-name"],
+	th[data-sort="stud-middle"] {
+		display: none;
+	}
+
+	td[data-field="house-name"],
+	th[data-sort="stud-house"] {
+		display: none;
+	}
+
+	td[data-field="gender"],
+	th[data-sort="stud-gender"] {
+		display: none;
+	}
+}
