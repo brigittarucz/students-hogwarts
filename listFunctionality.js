@@ -3,7 +3,7 @@
 // Program start
 
 let baseLink = 'https://petlatkea.dk/2019/hogwartsdata/students.json';
-let nameLink = 'http://petlatkea.dk/2019/hogwartsdata/families.json';
+let nameLink = 'https://petlatkea.dk/2019/hogwartsdata/families.json';
 
 // Side buttons functionality
 
